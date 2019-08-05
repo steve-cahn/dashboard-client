@@ -1,0 +1,117 @@
+@import '../../style/variables.scss';
+
+.main {
+	background-color: $primaryColor;
+	width: 100%;
+	margin-left: 232px;
+	padding: 0 50px;
+
+	.chart {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 70px;
+	}
+
+	.chart-item-container {
+		box-shadow: $shaddow;
+		border-radius: 30px;
+		overflow: hidden;
+		background-color: $componentsColor;
+		width: 48%;
+
+		.chart-item {
+			height: 500px;
+		}
+
+		.title {
+			color: white;
+			background: linear-gradient(to left, $green, $darkColor);
+			box-shadow: $shaddow;
+			margin-bottom: 30px;
+			padding: 10px 0;
+			font-size: 23px;
+		}
+
+		&.table-container {
+			width: initial;
+			margin-top: 50px;
+			margin-bottom: 50px;
+
+			.title,
+			.row-wrapper {
+				display: flex;
+				justify-content: space-around;
+			}
+
+			.title-item,
+			.row {
+				width: 20%;
+			}
+
+			.title {
+				margin-bottom: 0;
+			}
+			.table-body {
+				height: 400px;
+				overflow: auto;
+				color: #a7a7a7;
+
+				.row-wrapper {
+					padding: 20px 0;
+					font-size: 17px;
+
+					&:nth-child(odd) {
+						background-color: $secondaryComponentColor;
+					}
+				}
+			}
+		}
+	}
+
+	.table {
+		color: white;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+		width: 100%;
+		position: relative;
+
+		thead {
+			th {
+				padding: 10px 0;
+			}
+		}
+
+		tbody {
+			td {
+				padding: 20px 0;
+				color: #5d5d60;
+
+				td {
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 1100px) {
+	.main {
+		.chart {
+			flex-direction: column;
+		}
+		.chart-item-container {
+			width: 100%;
+
+			&:not(:first-of-type) {
+				margin-top: 50px;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	.main {
+		margin-left: initial;
+	}
+}
